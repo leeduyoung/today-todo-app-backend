@@ -10,7 +10,8 @@
     "start:dev": "pm2 start src/index.js --watch "
   },
   "dependencies": {
-    "koa": "^2.5.1"
+    "koa": "^2.5.1",
+    "koa-router": "^7.4.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",
