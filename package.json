@@ -1,0 +1,22 @@
+{
+  "name": "today-todo-app-backend",
+  "version": "1.0.0",
+  "description": "Today Todo Application Server",
+  "main": "index.js",
+  "author": "REDO",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src",
+    "start:dev": "pm2 start src/index.js --watch "
+  },
+  "dependencies": {
+    "koa": "^2.5.1"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
+  }
+}
