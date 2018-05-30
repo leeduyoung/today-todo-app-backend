@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node src",
-    "start:dev": "pm2 start src/index.js --watch "
+    "start:dev": "pm2 start src/index.js --watch --no-daemon"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
