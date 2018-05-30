@@ -1,7 +1,8 @@
 require('dotenv').config(); // .env 파일에서 환경변수 불러오기 (dotenv 설치 필요)
 
 const Koa = require('koa');
-const Router = require('koa-router'); //koa-router
+const Router = require('koa-router'); // koa-router
+const bodyParser = require('koa-bodyparser'); // request body에 담긴 json 형식의 데이터를 파싱해서 사용할 수 있도록 도와주는 미들웨어
 
 const app = new Koa();
 const router = new Router();
@@ -76,6 +77,8 @@ router.get('/post', (ctx, next) => {
         ctx.body = '포스트 아이디가 없습니다.';
     }
 });
+
+app.use(bodyParser()); // 바디파서 적용, 라우터 적용코드보다 상단에 있어야합니다.
 
 // koa에 router 모듈 연결
 app.use(router.routes()).use(router.allowedMethods());
