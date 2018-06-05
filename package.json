@@ -6,15 +6,17 @@
   "author": "REDO",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_PATH=src node src", 
+    "start": "NODE_PATH=src node src",
     "start:dev": "NODE_PATH=src pm2 start src/index.js --watch --no-daemon"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
+    "jsonwebtoken": "^8.2.2",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
-    "mongoose": "^5.1.2"
+    "mongoose": "^5.1.2",
+    "node-cron": "^1.2.1"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",

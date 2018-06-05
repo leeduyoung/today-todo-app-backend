@@ -12,4 +12,8 @@ api.get('/', (ctx, next) => {
     ctx.body = 'GET2 ' + ctx.request.path;
 });
 
+const auth = require('./auth');
+
+api.use('/auth', auth.routes());
+
 module.exports = api;
