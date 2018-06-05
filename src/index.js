@@ -3,9 +3,18 @@ require('dotenv').config(); // .env 파일에서 환경변수 불러오기 (dote
 const Koa = require('koa');
 const Router = require('koa-router'); // koa-router
 const bodyParser = require('koa-bodyparser'); // request body에 담긴 json 형식의 데이터를 파싱해서 사용할 수 있도록 도와주는 미들웨어
+const { jwtMiddleware } = require('./lib/token');
 
 const app = new Koa();
 const router = new Router();
+
+app.use(bodyParser()); // 바디파서 적용, 라우터 적용코드보다 상단에 있어야합니다.
+app.use(jwtMiddleware);
+
+// koa에 router 모듈 연결
+app
+    .use(router.routes())
+    .use(router.allowedMethods());
 
 const api = require('./api');
 router.use('/api', api.routes());
@@ -78,13 +87,15 @@ router.get('/post', (ctx, next) => {
     }
 });
 
-app.use(bodyParser()); // 바디파서 적용, 라우터 적용코드보다 상단에 있어야합니다.
-
-// koa에 router 모듈 연결
-app
-    .use(router.routes())
-    .use(router.allowedMethods());
-
 app.listen(port, () => {
     console.log(`heurm server is listening to port ${port}`);
+});
+
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ foo: 'bar' }, 'secret-key', { expiresIn: '7d' }, (err, token) => {
+    if(err) {
+        console.log(err);
+        return;
+    }
+    console.log(token);
 });
