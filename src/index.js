@@ -19,18 +19,17 @@ app
 const api = require('./api');
 router.use('/api', api.routes());
 
-const mongoose = require('mongoose');
-
-mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
 // mongodb 연결
-mongoose.connect(process.env.MONGO_URI)
-.then(
-    (response) => {
-        console.log('Successfully connected to mongodb');
-    }
-).catch(e => {
-    console.error(e);
-});
+// const mongoose = require('mongoose');
+// mongoose.Promise = global.Promise; // Node 의 네이티브 Promise 사용
+// mongoose.connect(process.env.MONGO_URI)
+// .then(
+//     (response) => {
+//         console.log('Successfully connected to mongodb');
+//     }
+// ).catch(e => {
+//     console.error(e);
+// });
 
 const port = process.env.PORT || 4000; // PORT 값이 설정되어있지 않다면 4000 을 사용합니다.
 
@@ -91,11 +90,11 @@ app.listen(port, () => {
     console.log(`heurm server is listening to port ${port}`);
 });
 
-const jwt = require('jsonwebtoken');
-const token = jwt.sign({ foo: 'bar' }, 'secret-key', { expiresIn: '7d' }, (err, token) => {
-    if(err) {
-        console.log(err);
-        return;
-    }
-    console.log(token);
-});
+// const jwt = require('jsonwebtoken');
+// const token = jwt.sign({ foo: 'bar' }, 'secret-key', { expiresIn: '7d' }, (err, token) => {
+//     if(err) {
+//         console.log(err);
+//         return;
+//     }
+//     console.log(token);
+// });
