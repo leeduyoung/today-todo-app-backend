@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const Account = require('../../model/Account');
+// const Account = require('../../model/Account');
 
 // 로컬 회원가입
 exports.localRegister = async (ctx) => {
