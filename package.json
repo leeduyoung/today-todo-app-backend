@@ -6,7 +6,7 @@
   "author": "REDO",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_PATH=src node src",
+    "start": "NODE_PATH=src pm2 start src/index.js",
     "start:dev": "NODE_PATH=src pm2 start src/index.js --watch --no-daemon"
   },
   "dependencies": {
