@@ -6,8 +6,8 @@
   "author": "REDO",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_PATH=src pm2 start src/index.js",
-    "start:dev": "NODE_PATH=src pm2 start src/index.js --watch --no-daemon"
+    "start": "sudo pm2 start src/index.js",
+    "start:dev": "sudo pm2 start src/index.js --watch --no-daemon"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
