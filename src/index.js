@@ -3,6 +3,7 @@ require('dotenv').config(); // .env 파일에서 환경변수 불러오기 (dote
 const Koa = require('koa');
 const Router = require('koa-router'); // koa-router
 const bodyParser = require('koa-bodyparser'); // request body에 담긴 json 형식의 데이터를 파싱해서 사용할 수 있도록 도와주는 미들웨어
+const logger = require('./lib/logger');
 
 const app = new Koa();
 const router = new Router();
@@ -17,11 +18,11 @@ app
 const api = require('./api');
 router.use('/api', api.routes());
 
-
 const port = process.env.PORT || 4000; // PORT 값이 설정되어있지 않다면 4000 을 사용합니다.
 
-
 router.get('/', (ctx, next) => {
+    logger.info('홈 접속');
+    logger.error('running22 a task every morning AM 9:00');
     ctx.body = '홈';
 });
 
