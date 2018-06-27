@@ -14,7 +14,6 @@ if (!fs.existsSync(logDir)) {
 const customFormat = printf(info => {
   return `${moment().format('YYYY-MM-DD HH:mm:ss')} [${info.label}] ${info.level}: ${info.message}`;
 });
-const tsFormat = () => (new Date()).toLocaleTimeString();
 
 const dailyRotate = new DailyRotateFile({
     filename: `${logDir}/%DATE%.log`,
