@@ -21,8 +21,10 @@ router.use('/api', api.routes());
 const port = process.env.PORT || 4000; // PORT 값이 설정되어있지 않다면 4000 을 사용합니다.
 
 router.get('/', (ctx, next) => {
-    logger.info('홈 접속');
-    logger.error('running22 a task every morning AM 9:00');
+    logger.info('홈 접속 info');
+    logger.error('홈 접속 error');
+    logger.debug('홈 접속 debug');
+    logger.verbose('홈 접속 verbose');
     ctx.body = '홈';
 });
 

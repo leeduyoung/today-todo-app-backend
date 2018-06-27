@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "dotenv": "^5.0.1",
+    "fs": "^0.0.1-security",
     "joi": "^13.4.0",
     "jsonwebtoken": "^8.2.2",
     "koa": "^2.5.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "moment": "^2.22.2",
     "mongoose": "^5.1.2",
     "node-cron": "^1.2.1",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "winston-daily-rotate-file": "^3.2.3"
   },
   "devDependencies": {
     "eslint-config-standard": "^11.0.0",
