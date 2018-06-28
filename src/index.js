@@ -26,7 +26,7 @@ router.get('/', (ctx, next) => {
     logger.error('홈 접속 error');
     logger.debug('홈 접속 debug');
     logger.verbose('홈 접속 verbose');
-    ctx.body = '홈';
+    ctx.body = '홈!!!';
 });
 
 router.get('/about', (ctx, next) => {
