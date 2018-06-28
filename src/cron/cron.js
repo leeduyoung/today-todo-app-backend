@@ -25,7 +25,7 @@ const nightScheduler = nodeCron.schedule('0 21 * * *', () => {
     // TODO: 오늘할일에 대한 결과를 알람으로 전송
 });
 
-const testScheduler = nodeCron.schedule('*/1 * * * *', () => {
+const testScheduler = nodeCron.schedule('*/10 * * * *', () => {
     logger.info('running a task every minute');
 });
 
