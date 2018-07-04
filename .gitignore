@@ -65,3 +65,6 @@ deploy.json
 
 ### Python ###
 __pycache__/
+
+# etc configuration
+config.ts

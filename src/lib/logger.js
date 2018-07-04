@@ -20,7 +20,7 @@ const dailyRotate = new DailyRotateFile({
     datePattern: 'YYYY-MM-DD',
     zippedArchive: false,
     maxSize: '20m',
-    maxFiles: '14d'
+    maxFiles: '10d'
 });
 
 const logger = winston.createLogger({
