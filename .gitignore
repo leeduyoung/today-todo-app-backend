@@ -67,4 +67,4 @@ deploy.json
 __pycache__/
 
 # etc configuration
-config.ts
+config.js
